@@ -28,6 +28,48 @@ Check the value of USDC.homes portfolio
 Forge is a tool for building, testing and deploying Ethereum smart contracts.
 
 Run:
-```forge build```
-```forge test```
-```forge deploy```
+```bash
+forge build
+forge test
+forge deploy
+```
+# 👩🏻‍💼 Package management
+
+## Foundry
+
+```bash
+# Initialize new package
+forge init uranium --no-commit
+
+# Install openzeppelin-contracts
+forge install OpenZeppelin/openzeppelin-contracts --no-commit --root uranium
+
+# Install openzeppelin-contracts-upgradeable
+forge install OpenZeppelin/openzeppelin-contracts-upgradeable --no-commit --root uranium
+```
+
+## Add local package as a new submodule
+
+```bash
+# Add carbon contracts submodule
+git submodule add git@github.com:trusttoken/contracts-carbon.git uranium/lib/contracts-carbon
+```
+
+## Update submodule
+
+```bash
+# Go to
+cd lib/contracts-carbon
+
+# Update local git repository
+git fetch
+git pull
+
+# Go back to the root git repository
+cd ..
+
+# Commit updated submodule
+git add .
+git commit -m "Update carbon contracts"
+git push origin/master
+```
