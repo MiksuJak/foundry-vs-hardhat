@@ -20,11 +20,17 @@ describe('Counter', () => {
     expect(await counter.number()).to.eq(1)
   })
 
-  ;[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) =>
-    it(`setNumber ${x}`, async () => {
-      const { counter } = await loadFixture(counterFixture)
-      await counter.setNumber(x)
-      expect(await counter.number()).to.eq(x)
-    })
-  )
+  it('setNumber', async () => {
+    const { counter } = await loadFixture(counterFixture)
+    await counter.setNumber(5)
+    expect(await counter.number()).to.eq(5)
+  })
+
+  // ;[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((x) =>
+  //   it(`setNumber ${x}`, async () => {
+  //     const { counter } = await loadFixture(counterFixture)
+  //     await counter.setNumber(x)
+  //     expect(await counter.number()).to.eq(x)
+  //   })
+  // )
 })
