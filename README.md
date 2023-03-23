@@ -31,7 +31,7 @@ Run:
 ```bash
 forge build
 forge test
-forge deploy
+forge script
 ```
 # 👩🏻‍💼 Package management
 
